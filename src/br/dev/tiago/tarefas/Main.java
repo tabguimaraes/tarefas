@@ -6,16 +6,51 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.dev.tiago.tarefas.dao.FuncionarioDAO;
+import br.dev.tiago.tarefas.model.Funcionario;
 import br.dev.tiago.tarefas.model.Tarefa;
 
 public class Main {
 	private static String path = "C:\\Users\\25132500\\tarefa\\tarefas.txt";
 
 	public static void main(String[] args) {
-		Tarefa tarefa = new Tarefa("Água");
+		List<String> frutas = new ArrayList<>();
+		List<Funcionario> funcionarios = new ArrayList<>();
 
-		gravarArquivo();
-		lerArquivo();
+		Funcionario funcionario = new Funcionario();
+		funcionario.setCodigo(1);
+		funcionario.setNome("Tiago");
+		funcionario.setMatricula("20001");
+		funcionario.setEmail("teste@gmail.com");
+
+		Funcionario funcionario2 = new Funcionario();
+		funcionario2.setCodigo(2);
+		funcionario2.setNome("Teste");
+		funcionario2.setMatricula("202341");
+		funcionario2.setEmail("teste2@gmail.com");
+
+		funcionarios.add(funcionario);
+		funcionarios.add(funcionario2);
+		
+//		System.out.println();
+		
+	funcionarios.forEach(item -> {
+		System.out.println(item.getNome() + " - " + item.getEmail());
+	
+	});
+
+//		
+//		FuncionarioDAO dao = new FuncionarioDAO(funcionario);
+//		
+//		dao.gravar();
+
+//		Tarefa tarefa = new Tarefa("Água");
+//
+//		gravarArquivo();
+//		lerArquivo();
 
 	}
 
